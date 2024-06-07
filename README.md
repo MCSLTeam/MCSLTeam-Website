@@ -3,7 +3,7 @@
 ## Pull
 
 ```bash
-git pull https://github.com/MCSLTeam/MCSLTeam-Website.git --recursive
+git clone https://github.com/MCSLTeam/MCSLTeam-Website.git --recursive
 ```
 
 ## Install Deps
