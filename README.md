@@ -1,6 +1,4 @@
-# MCSL 开发组官网
-
-___
+# MCSLTeam Website
 
 ## Pull
 
