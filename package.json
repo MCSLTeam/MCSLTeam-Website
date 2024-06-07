@@ -1,0 +1,27 @@
+{
+  "name": "mcslteam-website-new",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "g": "hexo g",
+    "cl": "hexo cl",
+    "d": "hexo d",
+    "s": "hexo s"
+  },
+  "hexo": {
+    "version": "7.2.0"
+  },
+  "dependencies": {
+    "hexo": "^7.0.0",
+    "hexo-all-minifier": "^0.5.7",
+    "hexo-generator-archive": "^2.0.0",
+    "hexo-generator-category": "^2.0.0",
+    "hexo-generator-index": "^3.0.0",
+    "hexo-generator-tag": "^2.0.0",
+    "hexo-renderer-ejs": "^2.0.0",
+    "hexo-renderer-marked": "^6.0.0",
+    "hexo-renderer-stylus": "^3.0.0",
+    "hexo-server": "^3.0.0",
+    "hexo-theme-landscape": "^1.0.0"
+  }
+}
