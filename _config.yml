@@ -104,3 +104,8 @@ deploy:
   type: ''
 
 all_minifier: true
+
+baidusitemap:
+    path: baidusitemap.xml
+sitemap:
+    path: sitemap.xml
