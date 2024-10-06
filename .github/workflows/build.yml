@@ -27,7 +27,9 @@ jobs:
             ${{ runner.OS }}-npm-cache
 
       - name: Install Dependencies
-        run: bun i
+        run: |
+          curl -fsSL https://bun.sh/install | bash # Install Bun
+          bun i
         
       - name: Build
         run: bun run g
