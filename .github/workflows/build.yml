@@ -1,4 +1,4 @@
-name: Build VitePress Website
+name: Build Hexo Website
 on: [push, workflow_dispatch]
 permissions: write-all
 jobs:
@@ -11,15 +11,15 @@ jobs:
           timezoneLinux: 'Asia/Shanghai'
 
       - name: Check out Git Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Install Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: '18'
       
       - name: Cache NPM Dependencies
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: node_modules
           key: ${{ runner.OS }}-npm-cache
