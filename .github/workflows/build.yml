@@ -1,0 +1,48 @@
+name: Build VitePress Website
+on: [push, workflow_dispatch]
+permissions: write-all
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⏰Set time zone
+        uses: szenius/set-timezone@v1.0
+        with:
+          timezoneLinux: 'Asia/Shanghai'
+
+      - name: Check out Git Repository
+        uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      
+      - name: Cache NPM Dependencies
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: ${{ runner.OS }}-npm-cache
+          restore-keys: |
+            ${{ runner.OS }}-npm-cache
+
+      - name: Install Dependencies
+        run: bun i
+        
+      - name: Build
+        run: bun run g
+
+      - name: 📂 FTP Deploy
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./public/
+          server-dir: ./mcsl.com.cn/
+          log-level: verbose
+          port: ${{ secrets.FTP_PORT }}
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
