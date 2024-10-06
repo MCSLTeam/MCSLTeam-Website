@@ -28,7 +28,8 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          curl -fsSL https://bun.sh/install | bash # Install Bun
+          curl -fsSL https://bun.sh/install | bash # Install Bun - Step 1
+          source ~/.bashrc # Install Bun - Step 2
           bun i
         
       - name: Build
